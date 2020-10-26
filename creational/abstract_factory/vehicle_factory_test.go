@@ -14,23 +14,23 @@ func TestBmwFactory(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	t.Log(fmt.Sprintf("Vehicle is from %s company", bmw1.GetManufacturer()))
+	t.Logf("Vehicle is from %s company", bmw1.GetManufacturer())
 	bmwISeries, ok := bmw1.(*BmwISeries)
 	if !ok {
 		t.Fatal("struct assertion failed")
 	}
-	t.Log(fmt.Sprintf("BMW car is %s%s", bmwISeries.GetModel(), bmwISeries.GetSeries()))
+	t.Logf("BMW car is %s%s", bmwISeries.GetModel(), bmwISeries.GetSeries())
 
 	bmw2, err := bmwFactory.NewVehicle(BmwXSeriesType)
 	if err != nil {
 		t.Fatal(err)
 	}
-	t.Log(fmt.Sprintf("Vehicle is from %s company", bmw2.GetManufacturer()))
+	t.Logf("Vehicle is from %s company", bmw2.GetManufacturer())
 	bmwXSeries, ok := bmw2.(*BmwXSeries)
 	if !ok {
 		t.Fatal("struct assertion failed")
 	}
-	t.Log(fmt.Sprintf("BMW car is %s%s", bmwXSeries.GetSeries(), bmwXSeries.GetModel()))
+	t.Logf("BMW car is %s%s", bmwXSeries.GetSeries(), bmwXSeries.GetModel())
 
 }
 
